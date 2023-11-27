@@ -16,7 +16,10 @@ public class Publisher {
     private String state;
     private String zip;
 
-    @ManyToMany(mappedBy = "publishers")
+    /**
+     * (1) Publisher to (n) many Books
+     */
+    @OneToMany(mappedBy = "publisher")
     private Set<Book> books = new HashSet<>();
 
     public Set<Book> getBooks() {
@@ -67,7 +70,13 @@ public class Publisher {
         this.state = state;
     }
 
+    public String getZip() {
+        return zip;
+    }
 
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
 
     @Override
     public String toString() {
