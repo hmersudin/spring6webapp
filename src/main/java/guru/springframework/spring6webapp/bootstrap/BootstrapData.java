@@ -57,14 +57,6 @@ public class BootstrapData implements CommandLineRunner {
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
 
-        // Save the association into database
-        authorRepository.save(ericSaved);
-        authorRepository.save(rodSaved);
-
-        System.out.println("In Bootstrap");
-        System.out.println("Author Count: " + authorRepository.count());
-        System.out.println("Book Count: " + bookRepository.count());
-
         // Create a Publisher
         final Publisher horizonBooks = new Publisher();
         horizonBooks.setPublisherName("Horizon Books");
@@ -74,8 +66,19 @@ public class BootstrapData implements CommandLineRunner {
         horizonBooks.setZip("56789");
 
         final Publisher horizonBooksSaved = publisherRepository.save(horizonBooks);
-        horizonBooksSaved.getBooks().add(dddSaved);
 
+        dddSaved.setPublisher(horizonBooksSaved);
+        noEJBSaved.setPublisher(horizonBooksSaved);
+
+        // Save the association into database
+        authorRepository.save(ericSaved);
+        authorRepository.save(rodSaved);
+        bookRepository.save(dddSaved);
+        bookRepository.save(noEJBSaved);
+
+        System.out.println("In Bootstrap");
+        System.out.println("Author Count: " + authorRepository.count());
+        System.out.println("Book Count: " + bookRepository.count());
         System.out.println("Publisher Count: " + publisherRepository.count());
     }
 }
