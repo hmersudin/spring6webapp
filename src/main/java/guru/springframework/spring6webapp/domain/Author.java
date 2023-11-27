@@ -57,6 +57,11 @@ public class Author {
                 '}';
     }
 
+    /**
+     * equals and hashCode -> this is for Hibernate to check if two objects are equal.
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

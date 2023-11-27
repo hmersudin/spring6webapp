@@ -62,7 +62,7 @@ public class Book {
 
 
     /**
-     * equals and hashCode -> this is for Hibernate to determine if two objects are the same object or not (if equal).
+     * equals and hashCode -> this is for Hibernate to determine if two objects are the same object or not (if equal)!
      * @param o
      * @return
      */
