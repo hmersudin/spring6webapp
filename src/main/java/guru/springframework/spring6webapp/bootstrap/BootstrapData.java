@@ -54,8 +54,13 @@ public class BootstrapData implements CommandLineRunner {
         final Book noEJBSaved = bookRepository.save(noEJB);
 
         // Create an association between those (two authors and two books)
+        // Adding the Book to the Author
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
+
+        // Adding the Author to the Book
+        dddSaved.getAuthors().add(ericSaved);
+        noEJBSaved.getAuthors().add(rodSaved);
 
         // Create a Publisher
         final Publisher horizonBooks = new Publisher();
