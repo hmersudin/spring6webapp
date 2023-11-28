@@ -1,7 +1,7 @@
 package guru.springframework.spring6webapp.controller;
 
 import guru.springframework.spring6webapp.service.GreetingService;
-import guru.springframework.spring6webapp.service.GreetingServiceImpl;
+import guru.springframework.spring6webapp.service.impl.GreetingServiceImpl;
 import org.springframework.stereotype.Controller;
 
 @Controller
