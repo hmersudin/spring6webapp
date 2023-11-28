@@ -18,5 +18,10 @@ class ConstructorInjectedControllerTest {
     @Test
     void sayHello() {
         assertThat(constructorInjectedController.sayHello()).isEqualTo("Hello Everyone from Base Service!");
+
+    @Test
+    void sayHelloFromPrimary() {
+        assertThat(constructorInjectedController.sayHello()).isEqualTo("Hello Everyone from the Primary Bean!");
+
     }
 }
