@@ -1,8 +1,8 @@
-package guru.springframework.spring6webapp.service;
+package guru.springframework.spring6webapp.service.impl;
 
+import guru.springframework.spring6webapp.service.GreetingService;
 import org.springframework.stereotype.Service;
 
-@Service
 public class GreetingServiceImpl implements GreetingService {
     @Override
     public String sayGreeting() {
