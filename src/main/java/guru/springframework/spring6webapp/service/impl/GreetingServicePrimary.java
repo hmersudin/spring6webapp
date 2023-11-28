@@ -1,5 +1,6 @@
-package guru.springframework.spring6webapp.service;
+package guru.springframework.spring6webapp.service.impl;
 
+import guru.springframework.spring6webapp.service.GreetingService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
