@@ -16,4 +16,9 @@ class SetterInjectedControllerTest {
     void sayHello() {
         assertThat(setterInjectedController.sayHello()).isEqualTo("Hello Everyone from Base Service!");
     }
+
+    @Test
+    void sayHelloUsingManuallySetBeanAndQualifier() {
+        assertThat(setterInjectedController.sayHello()).isEqualTo("Hey I am Setting a Greeting!");
+    }
 }

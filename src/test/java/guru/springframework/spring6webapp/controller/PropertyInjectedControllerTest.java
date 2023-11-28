@@ -1,7 +1,5 @@
 package guru.springframework.spring6webapp.controller;
 
-import guru.springframework.spring6webapp.service.impl.GreetingServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,6 +25,11 @@ class PropertyInjectedControllerTest {
     @Test
     void sayHello() {
         assertThat(propertyInjectedController.sayHello()).isEqualTo("Hello Everyone from Base Service!");
+    }
+
+    @Test
+    void sayHelloUsingQualifier() {
+        assertThat(propertyInjectedController.sayHello()).isEqualTo("Friends don't let friends to property injection!");
     }
 
 
