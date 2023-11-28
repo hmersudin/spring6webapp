@@ -1,16 +1,16 @@
-package guru.springframework.spring6webapp.controller;
+package guru.springframework.spring6webapp.controller.i18n;
 
 import guru.springframework.spring6webapp.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class ConstructorInjectedController {
-    // DI with a final property and then initializing it within constructor itself
+public class Myi18NController {
     private final GreetingService greetingService;
 
     @Autowired
-    public ConstructorInjectedController(GreetingService greetingService) {
+    public Myi18NController(@Qualifier("i18NService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
